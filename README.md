@@ -9,9 +9,8 @@ Thanks to the people on reddit for their feedbacks and ideas on how to improve t
 
 ## Informations about updates
 
-- I (IdolKeg) currently have midterm as well as writing a thesis. That's why there are not much update for now. Wait a bit I will update it when I will be done with everything :)
-- My motherboard fried today (26/11/2016), and since I don't have 50€ to spend to replace it (joys of being student), I will have to wait until I find a job after my thesis to afford one.
-- As of 11/12/2016, still no replacement for my motherboard, Exam time also. I will resume dev as son as I can.
+- I (IdolKeg) currently writing a paper and my thesis, almost done (still no motherboard).
+- My motherboard fried (26/11/2016), and since I don't have 50€ to spend to replace it (joys of being student), I will have to wait until I find a job after my thesis to afford one.
 - So, IF you are a dev and willing to help little bit, feel free :), I like this project as it is free and open source for everyone and useful for some people :)
 
 ## Installation
@@ -24,7 +23,7 @@ Thanks to the people on reddit for their feedbacks and ideas on how to improve t
 
 Require VS2015 and .NET Framework 4.5.
 
-
+ 
 ## Current release (Download this)
 
 https://github.com/IdolKeg/AnimaPaper/releases/tag/v0.3
@@ -62,6 +61,7 @@ Work only for Windows 8, 8.1 and 10 for now.
 - Automatic crash report
 - UI button / dropdown list to set strech / keep ratio of video / gif
 - Add contextual menu to Windows to be able to right-click, set as wallpaper directly. (from https://github.com/Tsoccerguy3)
+- Resume play after wakeup from sleep mode (possible ?)
 
 ## Known issues
 
