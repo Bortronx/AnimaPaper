@@ -6,7 +6,6 @@ Check the reddit topic for more informations:
 https://www.reddit.com/r/LivingBackgrounds/comments/57br0q/i_made_this_software_that_you_may_be_interested_in/
 
 Thanks to the people on reddit for their feedbacks and ideas on how to improve the software. Feel free to check / fork / modify as you please anything you want in this repository :)
-
 ## Informations about updates
 
 - I (IdolKeg) currently writing a paper and my thesis, almost done (still no motherboard).
@@ -20,8 +19,7 @@ Thanks to the people on reddit for their feedbacks and ideas on how to improve t
 
 ## Compile
 
-
-²Require VS2015 and .NET Framework 4.5.
+Require VS2015 and .NET Framework 4.5.
 
  
 ## Current release (Download this)
