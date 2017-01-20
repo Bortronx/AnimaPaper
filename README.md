@@ -21,7 +21,7 @@ Thanks to the people on reddit for their feedbacks and ideas on how to improve t
 ## Compile
 
 
-Require VS2015 and .NET Framework 4.5.
+²Require VS2015 and .NET Framework 4.5.
 
  
 ## Current release (Download this)
@@ -68,7 +68,7 @@ Work only for Windows 8, 8.1 and 10 for now.
 - Work on multiple monitors in duplicate mode but not in extended mode
 - Doesn't work on Win 7 and lower
 - .gif may be stuck and not replay
-- MPEG-1 Files are working BUT MPEG-2 Files are not (it shows blank screen)
+- ~~MPEG-1 Files are working BUT MPEG-2 Files are not (it shows blank screen)~~ https://github.com/IdolKeg/AnimaPaper/issues/7
 
 ## Usage
 
