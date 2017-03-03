@@ -8,8 +8,7 @@ https://www.reddit.com/r/LivingBackgrounds/comments/57br0q/i_made_this_software_
 Thanks to the people on reddit for their feedbacks and ideas on how to improve the software. Feel free to check / fork / modify as you please anything you want in this repository :)
 ## Informations about updates
 
-- I (IdolKeg) currently wrapping the thesis. Paper need small revision but it is done. Hopefully I will be able to buy a new motherboard soon.
-- My motherboard fried (26/11/2016), and since I don't have 50€ to spend to replace it (joys of being student), I will have to wait until I find a job after my thesis to afford one.
+- Thesis proposal defense done and passed. I went back to my country and a friend lend me a old computer where I can work on it again. Expect update soon :) (Need to install some stuffs on it and finish my paper for conference).
 - So, IF you are a dev and willing to help little bit, feel free :), I like this project as it is free and open source for everyone and useful for some people :)
 
 ## Installation
