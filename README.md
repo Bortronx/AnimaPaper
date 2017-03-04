@@ -59,6 +59,7 @@ Work only for Windows 8, 8.1 and 10 for now.
 - UI button / dropdown list to set strech / keep ratio of video / gif
 - Add contextual menu to Windows to be able to right-click, set as wallpaper directly. (from https://github.com/Tsoccerguy3)
 - Resume play after wakeup from sleep mode (possible ?)
+- Grab YouTube video and plays it (From an idea posted by https://github.com/RianOBrian)
 
 ## Known issues
 
