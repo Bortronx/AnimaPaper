@@ -37,6 +37,7 @@ namespace VideoDesk
         public static Window win2;
         public static MediaElement media = null;
         public static string path;
+        public static string autoplay;
       //  public static List<MediaElement> mediaList;
       //  public static List<Grid> gridList;
 
@@ -127,6 +128,7 @@ namespace VideoDesk
                             file = reader.ReadLine();
                             if (System.IO.File.Exists(file))
                             {
+
                                 setStartupAutoPlay = true;
                             }
                             else

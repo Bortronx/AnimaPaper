@@ -23,7 +23,7 @@ Require VS2015 and .NET Framework 4.5.
  
 ## Current release (Download this)
 
-https://github.com/IdolKeg/AnimaPaper/releases/tag/v0.3
+https://github.com/IdolKeg/AnimaPaper/releases/tag/v0.3.3
 
 ## Try it yourself
 
@@ -91,6 +91,11 @@ If you'd like to help me :)
 
 ## Changelog
 
+	v0.3.3: 
+	- Add Launch at Startup (When you checked the box once and relaunch it, the checkbox will be unchecked and I need to fix it to display the proper current state)
+	- Now when you will launch it, it will automatically load and play the previously played video if it's available (I will probably make it an option in a near future)
+	- Video "should" loop without stutter, "should"	
+	
 	v0.2.5: 
 	- Add Sound Control
 	- Add UI and some code for 1 video per monitor DOES NOT WORK YET
