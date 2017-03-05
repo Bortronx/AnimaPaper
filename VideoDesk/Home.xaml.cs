@@ -345,7 +345,7 @@ namespace VideoDesk
             //    key.DeleteValue("AnimaPaper", false);
             //    key.Close();
             //}
-            System.IO.File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.Startup) + "\\AnimaPaper");
+            System.IO.File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.Startup) + "\\AnimaPaper.lnk");
         }
     }
 }

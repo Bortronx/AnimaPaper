@@ -125,7 +125,12 @@ namespace VideoDesk
                         {
                             file = String.Empty;
                             file = reader.ReadLine();
-                            setStartupAutoPlay = true;
+                            if (System.IO.File.Exists(file))
+                            {
+                                setStartupAutoPlay = true;
+                            }
+                            else
+                                file = String.Empty;
                         }
                     }
                     
