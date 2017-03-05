@@ -44,6 +44,8 @@ Work only for Windows 8, 8.1 and 10 for now.
 - Multiple Monitor support (Maybe ? need some test, I have only 1, coding blindly)
 - Can enable / disable sound while playing and change volume
 - WiP different video on each monitor NOT FULLY IMPLEMENTED Basically the UI and some controls are here but not working, may crash if you try.
+- Launch at Windows Startup (copy shortcut to the current user local Startup). 
+- If a video have been loaded previously, next launch will automatically play this video if it is still available (not deleted not moved).
 
 ## Upcoming
 
@@ -52,7 +54,6 @@ Work only for Windows 8, 8.1 and 10 for now.
 - automatically change wallpapers/videos based on time? Like, one for the morning, one for afternoon, one for night, etc. (From xrailgun )
 - 1 different video per monitor (Yes it's possible, it requires some coding but I can do it :b) (It will also increase the CPU and Memory Load.)
 - Need to revamp the UI (because this one is quite flawed), using MVVM way
-- Make it works as a service startup in Windows.
 - Make a config file to load and play the last video on launch (idea: https://www.reddit.com/user/Hi_ItsPaul)
 - Lower the CPU usage
 - Automatic crash report
@@ -60,6 +61,7 @@ Work only for Windows 8, 8.1 and 10 for now.
 - Add contextual menu to Windows to be able to right-click, set as wallpaper directly. (from https://github.com/Tsoccerguy3)
 - Resume play after wakeup from sleep mode (possible ?)
 - Grab YouTube video and plays it (From an idea posted by https://github.com/RianOBrian)
+- Need some code cleanup
 
 ## Known issues
 
