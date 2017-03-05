@@ -21,6 +21,7 @@ using FirstFloor.ModernUI.Windows.Controls;
 using System.ComponentModel;
 using System.Collections;
 using System.Diagnostics;
+using Microsoft.Win32;
 
 namespace VideoDesk
 {
@@ -29,10 +30,13 @@ namespace VideoDesk
     /// </summary>
     public partial class MainWindow : ModernWindow
     {
+
+
         public static String file;
         public static Uri fileMedia;
         public static Window win2;
         public static MediaElement media = null;
+        public static string path;
       //  public static List<MediaElement> mediaList;
       //  public static List<Grid> gridList;
 
@@ -49,6 +53,8 @@ namespace VideoDesk
 
         public static bool soundOrNot;
         public static bool currentlyPlaying;
+        public static bool setStartupAutoPlay;
+
         System.Windows.Forms.NotifyIcon ni;
         public MainWindow()
         {
@@ -57,7 +63,7 @@ namespace VideoDesk
             media = null;
             soundOrNot = false;
             currentlyPlaying = false;
-
+            setStartupAutoPlay = false;
             player = new MediaPlayer { Volume = 0, ScrubbingEnabled = true }; //Used for thumbnails, not yet implemented
 
             // Tray icon and balloon
@@ -79,7 +85,7 @@ namespace VideoDesk
              * windowList will be used to create 1 window per monitor *Not yet implemented*
              * ButtonList will be used to create dynamically button in order to select and load a file for each monitor *Not yet implemented*
              */
-           // mediaList = new List<MediaElement>();
+            // mediaList = new List<MediaElement>();
             windowList = new List<Window>();
            // gridList = new List<Grid>();
             ScreenList = new List<System.Drawing.Rectangle>();
@@ -101,8 +107,40 @@ namespace VideoDesk
                 ButtonList[i].Content = "Screen " + i.ToString();
                 
             }
+            //Config file read / setup
+            configFile();
         }
 
+        //check the config file if there is a path to launch
+        private void configFile()
+        {
+            path =  "config.ini";
+            if (System.IO.File.Exists(path))
+            {
+                try
+                {
+                    if (new System.IO.FileInfo(path).Length > 0)
+                    {
+                        using (var reader = new System.IO.StreamReader(path))
+                        {
+                            file = String.Empty;
+                            file = reader.ReadLine();
+                            setStartupAutoPlay = true;
+                        }
+                    }
+                    
+                } catch (Exception e)
+                {
+                    throw new ApplicationException("The config file does not point to an available file or file was deleted / moved", e);
+                }
+            }
+            else
+            {
+                System.IO.FileStream fs = new System.IO.FileStream(path, System.IO.FileMode.CreateNew);
+                fs.WriteByte(0);
+                fs.Close();
+            }
+        }
 
         protected override void OnStateChanged(EventArgs e)
         {

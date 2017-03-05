@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,6 +32,7 @@ namespace VideoDesk
         public static List<int> FileLoadListSort;
         public static List<Uri> FileLoadListUri;
 
+
         public Home()
         {
             InitializeComponent();
@@ -41,6 +43,17 @@ namespace VideoDesk
             FileLoadListUri = new List<Uri>();
             onlyOne = true;
             Each.Visibility = Visibility.Hidden;
+
+            if (MainWindow.setStartupAutoPlay == true)
+            {
+                FileSelected.Text = MainWindow.file;
+                MainWindow.fileMedia = new Uri(MainWindow.file);
+
+                PlayButton.IsEnabled = true;
+                playingFile();
+            }
+           
+
             /*
             //Multiple monitor thing (dynamic button creation)
             if (MainWindow.ScreenList.Count > 1)
@@ -63,6 +76,7 @@ namespace VideoDesk
                 Multiple.IsEnabled = true;
                 */
         }
+
 
         //Multiple monitors
         //Not working yet, but will be used to load and prepare the video that are going to be played on each monitor
@@ -92,7 +106,7 @@ namespace VideoDesk
         }
 
         //One monitor or all the same
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public void Button_Click(object sender, RoutedEventArgs e)
         {
             var fileDialog = new System.Windows.Forms.OpenFileDialog();
             // Set filter for file extension and default file extension 
@@ -107,6 +121,10 @@ namespace VideoDesk
                     MainWindow.fileMedia = new Uri(fileDialog.FileName);
                     FileSelected.Text = MainWindow.file;
                     PlayButton.IsEnabled = true;
+
+                    System.IO.File.WriteAllText(MainWindow.path, String.Empty);
+                    System.IO.File.WriteAllText(MainWindow.path, MainWindow.file);
+
                     break;
                 case System.Windows.Forms.DialogResult.Cancel:
                 default:
@@ -118,8 +136,12 @@ namespace VideoDesk
         }
 
 
-
         private void PlayButton_Click(object sender, RoutedEventArgs e)
+        {
+            playingFile();
+        }
+
+        private void playingFile()
         {
             MainWindow.findWorker();
 
@@ -145,12 +167,11 @@ namespace VideoDesk
 
                 MainWindow.windowList[i].Initialized += new EventHandler((s, ea) =>
                 {
-                    
+
                     MainWindow.media = new MediaElement();
                     Grid grid = new Grid();
                     MainWindow.windowList[i].Content = grid;
                     grid.Children.Add(MainWindow.media);
-
 
                     MainWindow.media.Source = MainWindow.fileMedia;
                     MainWindow.media.LoadedBehavior = MediaState.Manual;
@@ -162,17 +183,19 @@ namespace VideoDesk
                     MainWindow.media.Volume = 0;
                     MainWindow.media.IsEnabled = true;
                     MainWindow.media.Visibility = Visibility.Visible;
-                  // MainWindow.media.MediaEnded += new RoutedEventHandler(m_MediaEnded);
+                    // MainWindow.media.MediaEnded += new RoutedEventHandler(m_MediaEnded);
 
                     MainWindow.media.MediaEnded += (send, eArgs) =>
                     {
-                        MainWindow.media.Position = new TimeSpan(0, 0, 1);
+                        // MainWindow.media.Position = new TimeSpan(0, 0, 1);
+                        MainWindow.media.Position = TimeSpan.Zero;
+
                         MainWindow.media.Play();
                     };
                     MainWindow.media.Play();
                     MainWindow.currentlyPlaying = true;
                     MainWindow.media.Stretch = Stretch.Fill;
-                    
+
 
                     /*
                     Grid grid = new Grid();
@@ -214,17 +237,17 @@ namespace VideoDesk
 
                 MainWindow.windowList[i].Show();
             }
-
         }
 
-        
         public static void m_MediaEnded(object sender, RoutedEventArgs e)
         {
-            MainWindow.media.Position = new TimeSpan(0, 0, 1);
+            //MainWindow.media.Position = new TimeSpan(0, 0, 1);
+            MainWindow.media.Position = TimeSpan.Zero;
+
             //MainWindow.media.Position = TimeSpan.FromSeconds(0);
             MainWindow.media.Play();
         }
-        
+
         private void StopButton_Click(object sender, RoutedEventArgs e)
         {
             if (MainWindow.currentlyPlaying == true)
@@ -296,6 +319,33 @@ namespace VideoDesk
         private void Windows_Unchecked(object sender, RoutedEventArgs e)
         {
             winSeven = false;
+        }
+
+        //For Startup checkbox
+        private void Startup_Checked(object sender, RoutedEventArgs e)
+        {
+            //using (RegistryKey key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true))
+            //{
+            //    key.SetValue("AnimaPaper", "\"" + System.Reflection.Assembly.GetExecutingAssembly().Location + "\"");
+            //    key.Close();
+            //}
+            //string[] lnk = System.IO.Directory.GetFiles(System.Windows.Forms.Application.StartupPath, "*.*");
+            //foreach (var found in lnk)
+            //{
+            //    Console.WriteLine(found);
+            //}
+           System.IO.File.Copy(System.Windows.Forms.Application.StartupPath + "\\AnimaPaper.lnk", Environment.GetFolderPath(Environment.SpecialFolder.Startup) + "\\AnimaPaper.lnk", true);
+
+        }
+
+        private void Startup_Unchecked(object sender, RoutedEventArgs e)
+        {
+            //using (RegistryKey key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true))
+            //{
+            //    key.DeleteValue("AnimaPaper", false);
+            //    key.Close();
+            //}
+            System.IO.File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.Startup) + "\\AnimaPaper");
         }
     }
 }

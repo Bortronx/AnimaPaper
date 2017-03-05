@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:VideoDesk"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="300" d:DesignWidth="513.838">
     <Grid Style="{StaticResource ContentRoot}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150" MaxWidth="175"/>
@@ -31,8 +31,10 @@
                 <Button Content="Stop" Name="StopButton" Click="StopButton_Click"  />
                 <CheckBox x:Name="Multiple" Content="Multiple Monitors" x:FieldModifier="public" Unchecked="Multiple_Unchecked" Checked="Multiple_Checked"/>
                 <CheckBox x:Name="Sound" Content="Sound Y/N" Checked="Sound_Checked" Unchecked="Sound_Unchecked"/>
-                <Slider x:Name="Volume" ValueChanged="Volume_ValueChanged" IsEnabled="False"/>
+                <Label Content="Volume" />
+                <Slider x:Name="Volume"  ValueChanged="Volume_ValueChanged" IsEnabled="False"/>
                 <CheckBox x:Name="Windows" Content="Windows 7 and below" Checked="Windows_Checked" Unchecked="Windows_Unchecked"/>
+                <CheckBox x:Name="Startup" Content="Run at Startup" Checked="Startup_Checked" Unchecked="Startup_Unchecked"/>
 
             </StackPanel>
         </ScrollViewer>
