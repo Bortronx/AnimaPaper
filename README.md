@@ -62,6 +62,7 @@ Work only for Windows 8, 8.1 and 10 for now.
 - Resume play after wakeup from sleep mode (possible ?)
 - Grab YouTube video and plays it (From an idea posted by https://github.com/RianOBrian)
 - Need some code cleanup
+- For Laptop, switch to static wallpaper when on battery to save some battery with override possible. (From Reddit /u/Paratyphi)
 
 ## Known issues
 
