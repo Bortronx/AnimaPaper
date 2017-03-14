@@ -41,6 +41,7 @@ Work only for Windows 8, 8.1 and 10 for now.
 - Depending on the video quality (HD / FullHD, 30FPS/60FPS, Codec used) The CPU usage may vary, from almost nothing with a low video quality, 30FPS to high usage with FullHD/4K + 60FPS. Memory usage should be video size + app size
 - Load and play most video files like a Live Wallpaper (Looping)
 - Can Minimize to Tray
+- Make a config file to load and play the last video on launch (idea: https://www.reddit.com/user/Hi_ItsPaul)
 - Multiple Monitor support (Maybe ? need some test, I have only 1, coding blindly)
 - Can enable / disable sound while playing and change volume
 - WiP different video on each monitor NOT FULLY IMPLEMENTED Basically the UI and some controls are here but not working, may crash if you try.
@@ -54,7 +55,6 @@ Work only for Windows 8, 8.1 and 10 for now.
 - automatically change wallpapers/videos based on time? Like, one for the morning, one for afternoon, one for night, etc. (From xrailgun )
 - 1 different video per monitor (Yes it's possible, it requires some coding but I can do it :b) (It will also increase the CPU and Memory Load.)
 - Need to revamp the UI (because this one is quite flawed), using MVVM way
-- Make a config file to load and play the last video on launch (idea: https://www.reddit.com/user/Hi_ItsPaul)
 - Lower the CPU usage
 - Automatic crash report
 - UI button / dropdown list to set strech / keep ratio of video / gif
